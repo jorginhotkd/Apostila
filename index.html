@@ -1363,6 +1363,80 @@
 <script>
   let currentScreen = 'home';
 
+  // ---- HISTORY API: intercepta botão físico de voltar no celular ----
+  window.addEventListener('load', () => {
+    history.replaceState({ screen: 'home' }, '', location.href.split('#')[0] + '#home');
+  });
+
+  window.addEventListener('popstate', (e) => {
+    const id = (e.state && e.state.screen) ? e.state.screen : 'home';
+    if (id === 'home') _renderHome();
+    else if (id === 'busca') _renderSearch();
+    else _renderScreen(id);
+  });
+
+  function _setHeader(title, sub) {
+    document.getElementById('headerTitle').textContent = title;
+    document.getElementById('headerSub').textContent = sub;
+  }
+
+  function _renderScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-' + id).classList.add('active');
+    document.getElementById('backBtn').classList.add('visible');
+    currentScreen = id;
+    window.scrollTo(0, 0);
+    setBnav(null);
+    setSidebarActive(id);
+    const titles = {
+      oque: 'O QUE É TAEKWONDO', juramento: 'JURAMENTO',
+      kuryong: 'KURYONG', kibon: 'KIBON DONG JAK',
+      insa: 'INSA', segui: 'SEGUI',
+      sogui: 'SOGUI', maqui: 'MAQUI', tchagui: 'TCHAGUI'
+    };
+    _setHeader(titles[id] || 'OVERTAKE TAEKWONDO CLUB', 'OVERTAKE · Vera Cruz-SP');
+  }
+
+  function _renderHome() {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-home').classList.add('active');
+    document.getElementById('backBtn').classList.remove('visible');
+    _setHeader('OVERTAKE TAEKWONDO CLUB', 'OVERTAKE · Vera Cruz-SP');
+    setBnav('home');
+    setSidebarActive('home');
+    window.scrollTo(0, 0);
+    currentScreen = 'home';
+  }
+
+  function _renderSearch() {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-busca').classList.add('active');
+    document.getElementById('backBtn').classList.remove('visible');
+    _setHeader('BUSCAR', 'Pesquisar termos e técnicas');
+    setBnav('busca');
+    setSidebarActive('busca');
+    window.scrollTo(0, 0);
+  }
+
+  // ---- Funções públicas (chamadas pelos botões) ----
+  function showScreen(id) {
+    history.pushState({ screen: id }, '', '#' + id);
+    _renderScreen(id);
+  }
+
+  function goHome() { showHome(); }
+
+  function showHome() {
+    history.pushState({ screen: 'home' }, '', '#home');
+    _renderHome();
+  }
+
+  function showSearch() {
+    history.pushState({ screen: 'busca' }, '', '#busca');
+    _renderSearch();
+    document.getElementById('searchInput').focus();
+  }
+
   const searchData = [
     { section:'O que é Taekwondo', title:'TAE', desc:'Saltar, voar, esmagar com os pés', screen:'oque' },
     { section:'O que é Taekwondo', title:'KWON', desc:'Bater ou destruir com as mãos', screen:'oque' },
@@ -1410,50 +1484,6 @@
     { section:'Insa', title:'Jo Kyo Nim', desc:'Assistente', screen:'insa' },
     { section:'Insa', title:'Kwan Jan Nim', desc:'Faixa Preta 7 a 9 Dan', screen:'insa' },
   ];
-
-  function showScreen(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen-' + id).classList.add('active');
-    document.getElementById('backBtn').classList.add('visible');
-    currentScreen = id;
-    window.scrollTo(0, 0);
-    setBnav(null);
-    setSidebarActive(id);
-
-    const titles = {
-      oque: 'O QUE É TAEKWONDO', juramento: 'JURAMENTO',
-      kuryong: 'KURYONG', kibon: 'KIBON DONG JAK',
-      insa: 'INSA', segui: 'SEGUI',
-      sogui: 'SOGUI', maqui: 'MAQUI', tchagui: 'TCHAGUI'
-    };
-    document.getElementById('headerTitle').textContent = titles[id] || 'OVERTAKE TAEKWONDO CLUB';
-    document.getElementById('headerSub').textContent = 'OVERTAKE · Vera Cruz-SP';
-  }
-
-  function goHome() { showHome(); }
-
-  function showHome() {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen-home').classList.add('active');
-    document.getElementById('backBtn').classList.remove('visible');
-    document.getElementById('headerTitle').textContent = 'OVERTAKE TAEKWONDO CLUB';
-    document.getElementById('headerSub').textContent = 'OVERTAKE · Vera Cruz-SP';
-    setBnav('home');
-    setSidebarActive('home');
-    window.scrollTo(0, 0);
-  }
-
-  function showSearch() {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen-busca').classList.add('active');
-    document.getElementById('backBtn').classList.remove('visible');
-    document.getElementById('headerTitle').textContent = 'BUSCAR';
-    document.getElementById('headerSub').textContent = 'Pesquisar termos e técnicas';
-    setBnav('busca');
-    setSidebarActive('busca');
-    document.getElementById('searchInput').focus();
-    window.scrollTo(0, 0);
-  }
 
   function setSidebarActive(id) {
     document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
