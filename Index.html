@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overtake Taekwondo Club – Apostila 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0392B;
+    --darkred: #8B0000;
+    --blue: #1A3A5C;
+    --darkblue: #0d2237;
+    --gold: #D4A017;
+    --bg: #0a0e17;
+    --surface: #111926;
+    --surface2: #192233;
+    --text: #EEF2F7;
+    --muted: #7a8fa6;
+    --border: rgba(255,255,255,0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---- DESKTOP WRAPPER ---- */
+  .desktop-bg {
+    background: var(--bg);
+    min-height: 100vh;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-bg {
+      background: #060a12;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar esquerda */
+    .desktop-sidebar {
+      width: 280px;
+      min-width: 280px;
+      background: linear-gradient(180deg, var(--darkblue) 0%, #080d18 100%);
+      border-right: 1px solid var(--border);
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      overflow-y: auto;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-logo {
+      padding: 28px 24px 20px;
+      border-bottom: 2px solid var(--gold);
+      text-align: center;
+    }
+
+    .sidebar-logo .logo-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--darkblue);
+      margin: 0 auto 12px;
+      box-shadow: 0 0 24px rgba(212,160,23,0.5);
+    }
+
+    .sidebar-logo h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 3px;
+      color: white;
+    }
+
+    .sidebar-logo p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .sidebar-nav {
+      padding: 16px 12px;
+      flex: 1;
+    }
+
+    .sidebar-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 12px 12px 6px;
+    }
+
+    .sidebar-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      background: none;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: var(--muted);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.18s;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .sidebar-btn:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+
+    .sidebar-btn.active {
+      background: rgba(212,160,23,0.12);
+      color: var(--gold);
+      border-left: 3px solid var(--gold);
+    }
+
+    .sidebar-btn .sb-icon { font-size: 18px; flex-shrink: 0; }
+    .sidebar-btn .sb-label { font-weight: 600; }
+    .sidebar-btn .sb-sub { font-size: 11px; color: var(--muted); display: block; }
+    .sidebar-btn.active .sb-sub { color: rgba(212,160,23,0.7); }
+
+    .sidebar-search {
+      padding: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .sidebar-search input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: var(--text);
+      font-size: 13px;
+      font-family: 'Noto Sans KR', sans-serif;
+      outline: none;
+    }
+
+    .sidebar-search input::placeholder { color: var(--muted); }
+    .sidebar-search input:focus { border-color: var(--gold); }
+
+    /* Conteúdo principal desktop */
+    .desktop-main {
+      margin-left: 280px;
+      flex: 1;
+      min-height: 100vh;
+    }
+
+    /* Header desktop simplificado */
+    .app-header {
+      padding: 16px 32px;
+    }
+
+    .back-btn { display: none !important; }
+
+    /* Ocultar bottom nav no desktop */
+    .bottom-nav { display: none !important; }
+
+    /* Remover max-width do mobile */
+    .screen { max-width: none; }
+
+    body { padding-bottom: 0; }
+
+    /* Home desktop: grid de 3 colunas */
+    .nav-grid {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 32px;
+      gap: 16px;
+    }
+
+    .nav-btn.full-width {
+      grid-column: span 1;
+    }
+
+    .hero { padding: 40px 32px 28px; }
+    .hero h2 { font-size: 48px; }
+    .section-label { padding: 28px 32px 14px; font-size: 12px; }
+
+    /* Content desktop */
+    .content-body { padding: 32px; max-width: 860px; }
+
+    .content-header h2 { font-size: 32px; }
+
+    /* Cards em grid no desktop */
+    .desktop-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .desktop-card-grid .card { margin-bottom: 0; }
+
+    /* Search results desktop */
+    .search-results { padding: 0 32px; max-width: 860px; }
+    .search-box { margin: 16px 32px; max-width: 860px; }
+
+    /* Count grid mais espaçoso */
+    .count-grid { grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .count-cell .num { font-size: 28px; }
+
+    /* Painel de busca desktop */
+    #screen-busca .search-area-desktop {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 860px;
+      padding: 0 32px;
+    }
+  }
+
+  /* Mobile: ocultar sidebar */
+  @media (max-width: 767px) {
+    .desktop-sidebar { display: none; }
+    .desktop-main { margin-left: 0; }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+
+  /* ---- HEADER ---- */
+  .app-header {
+    background: linear-gradient(135deg, var(--darkblue) 0%, var(--darkred) 100%);
+    padding: 20px 20px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .back-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .back-btn:active { background: rgba(255,255,255,0.25); }
+  .back-btn.visible { display: flex; }
+
+  .header-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--darkblue);
+    flex-shrink: 0;
+    box-shadow: 0 0 16px rgba(212,160,23,0.5);
+    letter-spacing: 1px;
+  }
+
+  .header-text { flex: 1; }
+  .header-text h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+    line-height: 1;
+  }
+  .header-text p {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .korean-tag {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ---- SCREEN ---- */
+  .screen { display: none; padding-bottom: 32px; }
+  .screen.active { display: block; animation: fadeUp 0.28s ease; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- HOME ---- */
+  .hero {
+    background: linear-gradient(180deg, var(--darkblue) 0%, var(--bg) 100%);
+    padding: 28px 20px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--darkblue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+
+  .hero h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: white;
+    line-height: 1;
+  }
+
+  .hero p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 20px 20px 10px;
+  }
+
+  /* ---- NAV BUTTONS ---- */
+  .nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .nav-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--accent, var(--gold));
+    border-radius: 4px 0 0 4px;
+  }
+
+  .nav-btn:active {
+    transform: scale(0.97);
+    background: var(--surface2);
+  }
+
+  .nav-btn .btn-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .nav-btn .btn-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+
+  .nav-btn .btn-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .nav-btn.full-width {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+  }
+
+  .nav-btn.full-width .btn-icon {
+    font-size: 30px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  /* ---- CONTENT SCREEN ---- */
+  .content-body {
+    padding: 20px;
+  }
+
+  .content-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .content-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+
+  .content-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    color: white;
+    line-height: 1.1;
+  }
+
+  .content-header .korean {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ---- CARDS / ITEMS ---- */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+  }
+
+  .item-row:last-child { border-bottom: none; }
+
+  .item-ko {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    flex: 1;
+    min-width: 0;
+  }
+
+  .item-pt {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: right;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .oath-list {
+    list-style: none;
+    counter-reset: oath;
+  }
+
+  .oath-list li {
+    counter-increment: oath;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .oath-list li:last-child { border-bottom: none; }
+
+  .oath-list li::before {
+    content: counter(oath);
+    background: var(--red);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .count-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+
+  .count-cell {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+
+  .count-cell .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .count-cell .word {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .def-section {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .def-section:last-child { border-bottom: none; }
+
+  .def-section .def-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .def-section .def-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .tag-chip {
+    display: inline-block;
+    background: rgba(192,57,43,0.18);
+    border: 1px solid rgba(192,57,43,0.4);
+    color: #e87c72;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin: 3px 3px 3px 0;
+  }
+
+  .tag-chip.blue {
+    background: rgba(26,58,92,0.3);
+    border-color: rgba(26,58,92,0.6);
+    color: #7ab8e8;
+  }
+
+  .tag-chip.gold {
+    background: rgba(212,160,23,0.15);
+    border-color: rgba(212,160,23,0.4);
+    color: var(--gold);
+  }
+
+  .info-block {
+    background: linear-gradient(135deg, rgba(26,58,92,0.3), rgba(192,57,43,0.1));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .tae-word {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+  }
+
+  .tae-word:last-child { border-bottom: none; }
+
+  .tae-letter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    width: 36px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .tae-meaning {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .tae-meaning strong {
+    color: var(--text);
+    display: block;
+    font-size: 14px;
+  }
+
+  /* ---- BOTTOM NAV ---- */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    background: rgba(10,14,23,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+    z-index: 200;
+  }
+
+  .bnav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 16px;
+    border-radius: 10px;
+    transition: color 0.2s;
+  }
+
+  .bnav-btn span {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .bnav-btn.active { color: var(--gold); }
+
+  body { padding-bottom: 80px; }
+
+  /* ---- FOOTER NOTE ---- */
+  .footer-note {
+    text-align: center;
+    padding: 24px 20px 8px;
+    border-top: 1px solid var(--border);
+    margin-top: 24px;
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+  }
+
+  .footer-note span {
+    color: rgba(212,160,23,0.6);
+  }
+
+  @media (min-width: 768px) {
+    .footer-note { padding: 24px 32px 16px; }
+  }
+
+  /* ---- SEARCH ---- */
+  .search-box {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 12px 16px;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .search-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .search-box input::placeholder { color: var(--muted); }
+
+  .search-icon { font-size: 16px; color: var(--muted); }
+
+  .search-results { padding: 0 16px; }
+
+  .search-result-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .search-result-item:active { background: var(--surface2); }
+
+  .search-result-item .res-section {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .search-result-item .res-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .search-result-item .res-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .empty-search {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* highlight */
+  mark {
+    background: rgba(212,160,23,0.3);
+    color: var(--gold);
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="desktop-bg">
+
+<!-- SIDEBAR (desktop only) -->
+<aside class="desktop-sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-circle">OTC</div>
+    <h1>OVERTAKE TAEKWONDO CLUB</h1>
+    <p>OVERTAKE · Vera Cruz-SP</p>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">📚 Apostila 2026</div>
+    <button class="sidebar-btn active" id="sb-home" onclick="showHome()">
+      <span class="sb-icon">🏠</span>
+      <span><span class="sb-label">Início</span><span class="sb-sub">Todos os tópicos</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-oque" onclick="showScreen('oque')">
+      <span class="sb-icon">🥋</span>
+      <span><span class="sb-label">O que é Taekwondo</span><span class="sb-sub">Origem e significado</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-juramento" onclick="showScreen('juramento')">
+      <span class="sb-icon">🤝</span>
+      <span><span class="sb-label">Juramento</span><span class="sb-sub">Os 5 compromissos</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-kuryong" onclick="showScreen('kuryong')">
+      <span class="sb-icon">🗣️</span>
+      <span><span class="sb-label">Kuryong</span><span class="sb-sub">Comandos em coreano</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-kibon" onclick="showScreen('kibon')">
+      <span class="sb-icon">👊</span>
+      <span><span class="sb-label">Kibon Dong Jak</span><span class="sb-sub">Movimentos básicos</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-insa" onclick="showScreen('insa')">
+      <span class="sb-icon">🙇</span>
+      <span><span class="sb-label">Insa</span><span class="sb-sub">Tipos de cumprimento</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-segui" onclick="showScreen('segui')">
+      <span class="sb-icon">🔢</span>
+      <span><span class="sb-label">Segui</span><span class="sb-sub">Contagem em coreano</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-sogui" onclick="showScreen('sogui')">
+      <span class="sb-icon">🦵</span>
+      <span><span class="sb-label">Sogui</span><span class="sb-sub">Bases da perna</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-maqui" onclick="showScreen('maqui')">
+      <span class="sb-icon">🛡️</span>
+      <span><span class="sb-label">Maqui</span><span class="sb-sub">Técnicas de defesa</span></span>
+    </button>
+    <button class="sidebar-btn" id="sb-tchagui" onclick="showScreen('tchagui')">
+      <span class="sb-icon">🦶</span>
+      <span><span class="sb-label">Tchagui</span><span class="sb-sub">Todos os chutes</span></span>
+    </button>
+  </nav>
+  <div class="sidebar-search">
+    <input type="text" placeholder="🔍 Buscar termos..." oninput="doSearch(this.value); showSearch();">
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<div class="desktop-main">
+
+<!-- HEADER -->
+<div class="app-header">
+  <div class="header-top">
+    <button class="back-btn" id="backBtn" onclick="goHome()">‹</button>
+    <div class="header-logo">OTC</div>
+    <div class="header-text">
+      <h1 id="headerTitle">OVERTAKE TAEKWONDO CLUB</h1>
+      <p id="headerSub">OVERTAKE · Vera Cruz-SP</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HOME ===================== -->
+<div class="screen active" id="screen-home">
+  <div class="hero">
+    <div class="hero-badge">OVERTAKE · Apostila 2026</div>
+    <h2>MANUAL DO ALUNO</h2>
+    <p>Navegue pelos tópicos da apostila<br>e aprenda os fundamentos do Taekwondo</p>
+  </div>
+
+  <div class="section-label">📚 Tópicos da Apostila</div>
+  <div class="nav-grid">
+
+    <div class="nav-btn" style="--accent:#D4A017" onclick="showScreen('oque')">
+      <span class="btn-icon">🥋</span>
+      <div class="btn-title">O que é Taekwondo</div>
+      <div class="btn-sub">Origem e significado</div>
+    </div>
+
+    <div class="nav-btn" style="--accent:#C0392B" onclick="showScreen('juramento')">
+      <span class="btn-icon">🤝</span>
+      <div class="btn-title">Juramento</div>
+      <div class="btn-sub">Os 5 compromissos</div>
+    </div>
+
+    <div class="nav-btn" style="--accent:#1A3A5C" onclick="showScreen('kuryong')">
+      <span class="btn-icon">🗣️</span>
+      <div class="btn-title">Kuryong</div>
+      <div class="btn-sub">Comandos em coreano</div>
+    </div>
+
+    <div class="nav-btn" style="--accent:#2E7D32" onclick="showScreen('kibon')">
+      <span class="btn-icon">👊</span>
+      <div class="btn-title">Kibon Dong Jak</div>
+      <div class="btn-sub">Movimentos básicos</div>
+    </div>
+
+    <div class="nav-btn" style="--accent:#D4A017" onclick="showScreen('insa')">
+      <span class="btn-icon">🙇</span>
+      <div class="btn-title">Insa</div>
+      <div class="btn-sub">Tipos de cumprimento</div>
+    </div>
+
+    <div class="nav-btn" style="--accent:#7B1FA2" onclick="showScreen('segui')">
+      <span class="btn-icon">🔢</span>
+      <div class="btn-title">Segui</div>
+      <div class="btn-sub">Contagem em coreano</div>
+    </div>
+
+    <div class="nav-btn full-width" style="--accent:#C0392B" onclick="showScreen('sogui')">
+      <span class="btn-icon">🦵</span>
+      <div>
+        <div class="btn-title">Sogui – Bases da Perna</div>
+        <div class="btn-sub">Todas as posições e bases</div>
+      </div>
+    </div>
+
+    <div class="nav-btn full-width" style="--accent:#1A3A5C" onclick="showScreen('maqui')">
+      <span class="btn-icon">🛡️</span>
+      <div>
+        <div class="btn-title">Maqui – Defesas</div>
+        <div class="btn-sub">Técnicas de defesa</div>
+      </div>
+    </div>
+
+    <div class="nav-btn full-width" style="--accent:#D4A017" onclick="showScreen('tchagui')">
+      <span class="btn-icon">🦶</span>
+      <div>
+        <div class="btn-title">Tchagui – Chutes</div>
+        <div class="btn-sub">Todos os tipos de chute</div>
+      </div>
+    </div>
+
+  </div>
+  <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+</div>
+
+<!-- ===================== O QUE É TAEKWONDO ===================== -->
+<div class="screen" id="screen-oque">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(212,160,23,0.15)">🥋</div>
+      <div>
+        <h2>O QUE É TAEKWONDO</h2>
+        <div class="korean">태권도란 무엇인가</div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      TAEKWONDO é o atual nome da Arte Marcial que vem mantendo sua existência independente e peculiar na Coréia por um espaço de mais de <strong>vinte mil anos</strong>. O propósito principal é defender e atacar o inimigo como meio de defesa própria usando livremente as mãos.
+    </div>
+
+    <div class="card">
+      <h3>📖 Significado das Palavras</h3>
+      <div class="tae-word">
+        <div class="tae-letter">TAE</div>
+        <div class="tae-meaning">
+          <strong>태 (TAE)</strong>
+          Saltar, voar, esmagar com os pés
+        </div>
+      </div>
+      <div class="tae-word">
+        <div class="tae-letter">KWON</div>
+        <div class="tae-meaning">
+          <strong>권 (KWON)</strong>
+          Bater ou destruir com as mãos
+        </div>
+      </div>
+      <div class="tae-word">
+        <div class="tae-letter">DO</div>
+        <div class="tae-meaning">
+          <strong>도 (DO)</strong>
+          O caminho, a arte, o método, a filosofia
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>💡 Definição</h3>
+      <div style="text-align:center; padding: 16px 0; font-size: 18px; font-weight:700; color: var(--gold); font-family: 'Bebas Neue', sans-serif; letter-spacing:2px;">
+        "O Caminho dos Pés e das Mãos"
+      </div>
+      <p style="font-size:13px; color:var(--muted); text-align:center">
+        Praticando Taekwondo, o aluno desenvolve técnica, espírito, auto-controle, humildade, disciplina, paciência, inteligência, coragem e saúde.
+      </p>
+    </div>
+
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== JURAMENTO ===================== -->
+<div class="screen" id="screen-juramento">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(192,57,43,0.15)">🤝</div>
+      <div>
+        <h2>JURAMENTO</h2>
+        <div class="korean">맹세</div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      O Juramento deve ser feito por <strong>todos os alunos</strong> antes do início de cada aula, lido em voz alta para relembrar os objetivos do TAEKWONDO.
+    </div>
+
+    <div class="card">
+      <h3>🗣️ Eu Prometo...</h3>
+      <ul class="oath-list">
+        <li>Observar as regras do Taekwondo</li>
+        <li>Respeitar meus instrutores e superiores</li>
+        <li>Nunca fazer o mau uso do Taekwondo</li>
+        <li>Ser campeão da liberdade e da justiça</li>
+        <li>Construir um mundo mais pacífico</li>
+      </ul>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== KURYONG ===================== -->
+<div class="screen" id="screen-kuryong">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(26,58,92,0.2)">🗣️</div>
+      <div>
+        <h2>KURYONG</h2>
+        <div class="korean">구령 (COMANDOS)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>⚔️ Comandos de Treino</h3>
+      <div class="item-row"><span class="item-ko">Tchariôt</span><span class="item-pt">Sentido</span></div>
+      <div class="item-row"><span class="item-ko">Barô</span><span class="item-pt">Voltar à posição inicial</span></div>
+      <div class="item-row"><span class="item-ko">Shijak</span><span class="item-pt">Começar</span></div>
+      <div class="item-row"><span class="item-ko">Kionhé</span><span class="item-pt">Cumprimentar</span></div>
+      <div class="item-row"><span class="item-ko">Kesok</span><span class="item-pt">Continuar</span></div>
+      <div class="item-row"><span class="item-ko">Shiô</span><span class="item-pt">Descansar</span></div>
+      <div class="item-row"><span class="item-ko">Guman</span><span class="item-pt">Parar</span></div>
+      <div class="item-row"><span class="item-ko">Andja</span><span class="item-pt">Sentar</span></div>
+      <div class="item-row"><span class="item-ko">Bar Bacó</span><span class="item-pt">Trocar a perna</span></div>
+      <div class="item-row"><span class="item-ko">Galio</span><span class="item-pt">Separar</span></div>
+      <div class="item-row"><span class="item-ko">Kihap</span><span class="item-pt">Grito</span></div>
+      <div class="item-row"><span class="item-ko">Irossôt</span><span class="item-pt">Levantar</span></div>
+      <div class="item-row"><span class="item-ko">Duiro Dora</span><span class="item-pt">Virar meia volta</span></div>
+      <div class="item-row"><span class="item-ko">Retchio</span><span class="item-pt">Debandar, abrir</span></div>
+      <div class="item-row"><span class="item-ko">Jumbi</span><span class="item-pt">Preparar</span></div>
+    </div>
+
+    <div class="card">
+      <h3>🏫 Academia e Vocabulário</h3>
+      <div class="item-row"><span class="item-ko">Kyonunsé Jumbi</span><span class="item-pt">Preparar em posição de luta</span></div>
+      <div class="item-row"><span class="item-ko">Do Jang</span><span class="item-pt">Academia</span></div>
+      <div class="item-row"><span class="item-ko">Dobok</span><span class="item-pt">Uniforme</span></div>
+      <div class="item-row"><span class="item-ko">Né</span><span class="item-pt">Sim</span></div>
+      <div class="item-row"><span class="item-ko">Anhión Rasseio?</span><span class="item-pt">Tudo bem?</span></div>
+      <div class="item-row"><span class="item-ko">Gansa Ram Nida</span><span class="item-pt">Obrigado</span></div>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== KIBON ===================== -->
+<div class="screen" id="screen-kibon">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(46,125,50,0.15)">👊</div>
+      <div>
+        <h2>KIBON DONG JAK</h2>
+        <div class="korean">기본 동작 (Movimentos Básicos)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>⚡ Aplicação dos Movimentos</h3>
+      <div class="def-section">
+        <div class="def-title">Jierugui</div>
+        <div class="def-desc">Sôco (Soco/Murro)</div>
+      </div>
+      <div class="def-section">
+        <div class="def-title">Tchigui</div>
+        <div class="def-desc">Bater</div>
+      </div>
+      <div class="def-section">
+        <div class="def-title">Makki</div>
+        <div class="def-desc">Defesa (bloquear)</div>
+      </div>
+      <div class="def-section">
+        <div class="def-title">Tchagui</div>
+        <div class="def-desc">Chute</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Categorias de Técnicas</h3>
+      <div style="padding-top:6px">
+        <span class="tag-chip">Soco</span>
+        <span class="tag-chip">Bater</span>
+        <span class="tag-chip blue">Defesa</span>
+        <span class="tag-chip gold">Chute</span>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6">
+        Os movimentos básicos formam a base de todo o Taekwondo. Cada técnica deve ser praticada repetidamente até se tornar natural.
+      </p>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== INSA ===================== -->
+<div class="screen" id="screen-insa">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(212,160,23,0.15)">🙇</div>
+      <div>
+        <h2>INSA</h2>
+        <div class="korean">인사 (CUMPRIMENTO)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🏳️ Tipos de Cumprimento</h3>
+      <div class="item-row"><span class="item-ko">Kuki é Deraio Kiunhé</span><span class="item-pt">À Bandeira</span></div>
+      <div class="item-row"><span class="item-ko">Kwanjan Nim Que Kiunhé</span><span class="item-pt">Ao Grão-Mestre</span></div>
+      <div class="item-row"><span class="item-ko">Sabumnim Que Kiunhé</span><span class="item-pt">Ao Mestre</span></div>
+      <div class="item-row"><span class="item-ko">Kyosa Nim Que Kiunhé</span><span class="item-pt">Ao Instrutor</span></div>
+      <div class="item-row"><span class="item-ko">Jokyo Nim Que Kiunhé</span><span class="item-pt">Ao Assistente</span></div>
+      <div class="item-row"><span class="item-ko">Kiunhé</span><span class="item-pt">Ao Superior (simples)</span></div>
+    </div>
+
+    <div class="card">
+      <h3>🥋 Títulos por Graduação (Dan)</h3>
+      <div class="item-row"><span class="item-ko">Kwan Jan Nim</span><span class="item-pt">Faixa Preta 7 a 9º Dan</span></div>
+      <div class="item-row"><span class="item-ko">Sa Bo Nim</span><span class="item-pt">4 a 6º Dan</span></div>
+      <div class="item-row"><span class="item-ko">Kyosa Nim</span><span class="item-pt">1 a 3º Dan</span></div>
+      <div class="item-row"><span class="item-ko">Jo Kyo Nim</span><span class="item-pt">Assistente</span></div>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== SEGUI ===================== -->
+<div class="screen" id="screen-segui">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(123,31,162,0.15)">🔢</div>
+      <div>
+        <h2>SEGUI</h2>
+        <div class="korean">세기 (CONTAGEM)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🔢 Números em Coreano</h3>
+      <div class="count-grid">
+        <div class="count-cell"><div class="num">1</div><div class="word">Raná</div></div>
+        <div class="count-cell"><div class="num">2</div><div class="word">Dur</div></div>
+        <div class="count-cell"><div class="num">3</div><div class="word">Sêt</div></div>
+        <div class="count-cell"><div class="num">4</div><div class="word">Nêt</div></div>
+        <div class="count-cell"><div class="num">5</div><div class="word">Dasôt</div></div>
+        <div class="count-cell"><div class="num">6</div><div class="word">Iosôt</div></div>
+        <div class="count-cell"><div class="num">7</div><div class="word">Ilgub</div></div>
+        <div class="count-cell"><div class="num">8</div><div class="word">Lhodór</div></div>
+        <div class="count-cell"><div class="num">9</div><div class="word">Arrop</div></div>
+        <div class="count-cell"><div class="num">10</div><div class="word">Lhor</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>💡 Dica de Treino</h3>
+      <p style="font-size:13px; color:var(--muted); line-height:1.7">
+        Durante os exercícios, a contagem em coreano é usada pelo instrutor para cadenciar os movimentos. Aprenda os números para acompanhar melhor as aulas!
+      </p>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== SOGUI ===================== -->
+<div class="screen" id="screen-sogui">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(192,57,43,0.15)">🦵</div>
+      <div>
+        <h2>SOGUI</h2>
+        <div class="korean">서기 (BASE DA PERNA)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📍 Bases Fundamentais</h3>
+      <div class="item-row"><span class="item-ko">Pyoni Sogui</span><span class="item-pt">Base à vontade</span></div>
+      <div class="item-row"><span class="item-ko">Tchariôt Sogui</span><span class="item-pt">Base de sentido</span></div>
+      <div class="item-row"><span class="item-ko">Moa Sogui</span><span class="item-pt">Base com pés fechados</span></div>
+      <div class="item-row"><span class="item-ko">Narani Sogui</span><span class="item-pt">Base com pés abertos na largura do ombro (paralelo)</span></div>
+      <div class="item-row"><span class="item-ko">Jutchum Sogui</span><span class="item-pt">Base sentado (agachado)</span></div>
+    </div>
+
+    <div class="card">
+      <h3>↔️ Bases Direcionais</h3>
+      <div class="item-row"><span class="item-ko">Orun Sogui</span><span class="item-pt">Base pelo lado direito</span></div>
+      <div class="item-row"><span class="item-ko">Uen Sogui</span><span class="item-pt">Base pelo lado esquerdo</span></div>
+      <div class="item-row"><span class="item-ko">Ap Sogui</span><span class="item-pt">Base frontal (um passo normal)</span></div>
+      <div class="item-row"><span class="item-ko">Ap Kubi</span><span class="item-pt">Base de um passo penetrado</span></div>
+      <div class="item-row"><span class="item-ko">Duikubi</span><span class="item-pt">Base em L</span></div>
+    </div>
+
+    <div class="card">
+      <h3>🐆 Bases Especiais</h3>
+      <div class="item-row"><span class="item-ko">Bom Sogui</span><span class="item-pt">Base de Leopardo</span></div>
+      <div class="item-row"><span class="item-ko">Natchuo Sogui</span><span class="item-pt">Base mais agachada que Tutchum Sogui</span></div>
+      <div class="item-row"><span class="item-ko">Kyot Dari Sogui</span><span class="item-pt">Base encostada entre dois pés</span></div>
+      <div class="item-row"><span class="item-ko">Dui Coasogui</span><span class="item-pt">Base com pés cruzados por trás</span></div>
+      <div class="item-row"><span class="item-ko">Ap Coasogui</span><span class="item-pt">Base com pés cruzados pela frente</span></div>
+      <div class="item-row"><span class="item-ko">Rak Dari Sogui</span><span class="item-pt">Base perna do Grou (só uma perna no chão)</span></div>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== MAQUI ===================== -->
+<div class="screen" id="screen-maqui">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(26,58,92,0.2)">🛡️</div>
+      <div>
+        <h2>MAQUI</h2>
+        <div class="korean">막기 (DEFESA)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🛡️ Técnicas de Defesa</h3>
+      <div class="def-section">
+        <div class="def-title">Are Maqui</div>
+        <div class="def-desc">Defesa em baixo — protege a região inferior do corpo</div>
+      </div>
+      <div class="def-section">
+        <div class="def-title">Momtong Maqui</div>
+        <div class="def-desc">Defesa tronco — protege o tronco / área média</div>
+      </div>
+      <div class="def-section">
+        <div class="def-title">Orgur Maqui</div>
+        <div class="def-desc">Defesa rosto — protege a face e cabeça</div>
+      </div>
+      <div class="def-section">
+        <div class="def-title">Retchio Maqui</div>
+        <div class="def-desc">Defesa abrindo os braços — técnica de abertura</div>
+      </div>
+      <div class="def-section">
+        <div class="def-title">An Maqui</div>
+        <div class="def-desc">Defesa para dentro — bloqueio interno</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📐 Zonas de Defesa</h3>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; padding-top:6px">
+        <span class="tag-chip gold">Are – Baixo</span>
+        <span class="tag-chip blue">Momtong – Tronco</span>
+        <span class="tag-chip">Orgur – Rosto</span>
+      </div>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== TCHAGUI ===================== -->
+<div class="screen" id="screen-tchagui">
+  <div class="content-body">
+    <div class="content-header">
+      <div class="content-icon" style="background:rgba(212,160,23,0.15)">🦶</div>
+      <div>
+        <h2>TCHAGUI</h2>
+        <div class="korean">차기 (CHUTE)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🦶 Chutes Lineares</h3>
+      <div class="item-row"><span class="item-ko">Aptcha Oligui</span><span class="item-pt">Levantamento de perna p/ frente</span></div>
+      <div class="item-row"><span class="item-ko">Tigô Tchagui</span><span class="item-pt">Chute enfiando</span></div>
+      <div class="item-row"><span class="item-ko">Ap Tchagui</span><span class="item-pt">Chute frontal</span></div>
+      <div class="item-row"><span class="item-ko">Miro Tchagui</span><span class="item-pt">Chute empurrando</span></div>
+      <div class="item-row"><span class="item-ko">Dui Tchagui</span><span class="item-pt">Chute por trás</span></div>
+      <div class="item-row"><span class="item-ko">Nerio Tchagui</span><span class="item-pt">Chute descendo</span></div>
+    </div>
+
+    <div class="card">
+      <h3>🌀 Chutes Circulares / Rotativos</h3>
+      <div class="item-row"><span class="item-ko">Dolio Tchagui</span><span class="item-pt">Virando lateral</span></div>
+      <div class="item-row"><span class="item-ko">Pitrô Tchagui</span><span class="item-pt">Diagonal p/ fora</span></div>
+      <div class="item-row"><span class="item-ko">Bandal Tchagui</span><span class="item-pt">P/ dentro (Ap Dolio Tchagui)</span></div>
+      <div class="item-row"><span class="item-ko">Ruriô Tchagui</span><span class="item-pt">Arrancando</span></div>
+      <div class="item-row"><span class="item-ko">Dora Ruriô Tchagui</span><span class="item-pt">Giratório (Bande Dolio)</span></div>
+      <div class="item-row"><span class="item-ko">Pakat Tchagui</span><span class="item-pt">Circular p/ fora</span></div>
+      <div class="item-row"><span class="item-ko">An Tchagui</span><span class="item-pt">Circular p/ dentro</span></div>
+    </div>
+
+    <div class="card">
+      <h3>⚡ Chutes com Salto e Combinados</h3>
+      <div class="item-row"><span class="item-ko">Tuio Tchagui</span><span class="item-pt">Com salto</span></div>
+      <div class="item-row"><span class="item-ko">Godup Tchagui</span><span class="item-pt">Em seguida</span></div>
+      <div class="item-row"><span class="item-ko">Gaui Tchagui</span><span class="item-pt">Com formato de tesoura</span></div>
+      <div class="item-row"><span class="item-ko">Narê Tchagui</span><span class="item-pt">Duplo em sequência</span></div>
+      <div class="item-row"><span class="item-ko">Dorguê Tchagui</span><span class="item-pt">Giro pelas costas (Rejon)</span></div>
+    </div>
+
+    <p class="footer-note">✦ Inspirada na Apostila da <span>Bang Taekwondo Club</span> — Mestre Flávio Bang.</p>
+  </div>
+</div>
+
+<!-- ===================== BUSCA ===================== -->
+<div class="screen" id="screen-busca">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Buscar termo ou técnica..." oninput="doSearch(this.value)">
+  </div>
+  <div class="search-results" id="searchResults">
+    <div class="empty-search">
+      <div style="font-size:40px;margin-bottom:12px">🔍</div>
+      Digite para buscar termos,<br>técnicas e comandos.
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="bnav-btn active" id="bnav-home" onclick="showHome()">
+    <span>🏠</span><span>Início</span>
+  </button>
+  <button class="bnav-btn" id="bnav-busca" onclick="showSearch()">
+    <span>🔍</span><span>Buscar</span>
+  </button>
+</nav>
+
+<script>
+  let currentScreen = 'home';
+
+  const searchData = [
+    { section:'O que é Taekwondo', title:'TAE', desc:'Saltar, voar, esmagar com os pés', screen:'oque' },
+    { section:'O que é Taekwondo', title:'KWON', desc:'Bater ou destruir com as mãos', screen:'oque' },
+    { section:'O que é Taekwondo', title:'DO', desc:'O caminho, a arte, o método, a filosofia', screen:'oque' },
+    { section:'Kuryong', title:'Tchariôt', desc:'Sentido', screen:'kuryong' },
+    { section:'Kuryong', title:'Barô', desc:'Voltar à posição inicial', screen:'kuryong' },
+    { section:'Kuryong', title:'Shijak', desc:'Começar', screen:'kuryong' },
+    { section:'Kuryong', title:'Kionhé', desc:'Cumprimentar', screen:'kuryong' },
+    { section:'Kuryong', title:'Kesok', desc:'Continuar', screen:'kuryong' },
+    { section:'Kuryong', title:'Shiô', desc:'Descansar', screen:'kuryong' },
+    { section:'Kuryong', title:'Guman', desc:'Parar', screen:'kuryong' },
+    { section:'Kuryong', title:'Andja', desc:'Sentar', screen:'kuryong' },
+    { section:'Kuryong', title:'Kihap', desc:'Grito', screen:'kuryong' },
+    { section:'Kuryong', title:'Jumbi', desc:'Preparar', screen:'kuryong' },
+    { section:'Kuryong', title:'Do Jang', desc:'Academia', screen:'kuryong' },
+    { section:'Kuryong', title:'Dobok', desc:'Uniforme', screen:'kuryong' },
+    { section:'Segui', title:'Raná', desc:'1 (um)', screen:'segui' },
+    { section:'Segui', title:'Dur', desc:'2 (dois)', screen:'segui' },
+    { section:'Segui', title:'Sêt', desc:'3 (três)', screen:'segui' },
+    { section:'Segui', title:'Nêt', desc:'4 (quatro)', screen:'segui' },
+    { section:'Segui', title:'Dasôt', desc:'5 (cinco)', screen:'segui' },
+    { section:'Segui', title:'Iosôt', desc:'6 (seis)', screen:'segui' },
+    { section:'Segui', title:'Ilgub', desc:'7 (sete)', screen:'segui' },
+    { section:'Segui', title:'Lhodór', desc:'8 (oito)', screen:'segui' },
+    { section:'Segui', title:'Arrop', desc:'9 (nove)', screen:'segui' },
+    { section:'Segui', title:'Lhor', desc:'10 (dez)', screen:'segui' },
+    { section:'Sogui', title:'Ap Kubi', desc:'Base de um passo penetrado', screen:'sogui' },
+    { section:'Sogui', title:'Duikubi', desc:'Base em L', screen:'sogui' },
+    { section:'Sogui', title:'Ap Sogui', desc:'Base frontal', screen:'sogui' },
+    { section:'Sogui', title:'Bom Sogui', desc:'Base de Leopardo', screen:'sogui' },
+    { section:'Sogui', title:'Rak Dari Sogui', desc:'Base com uma perna (Grou)', screen:'sogui' },
+    { section:'Maqui', title:'Are Maqui', desc:'Defesa em baixo', screen:'maqui' },
+    { section:'Maqui', title:'Momtong Maqui', desc:'Defesa tronco', screen:'maqui' },
+    { section:'Maqui', title:'Orgur Maqui', desc:'Defesa rosto', screen:'maqui' },
+    { section:'Maqui', title:'An Maqui', desc:'Defesa para dentro', screen:'maqui' },
+    { section:'Tchagui', title:'Ap Tchagui', desc:'Chute frontal', screen:'tchagui' },
+    { section:'Tchagui', title:'Dolio Tchagui', desc:'Chute virando lateral', screen:'tchagui' },
+    { section:'Tchagui', title:'Dui Tchagui', desc:'Chute por trás', screen:'tchagui' },
+    { section:'Tchagui', title:'Tuio Tchagui', desc:'Chute com salto', screen:'tchagui' },
+    { section:'Tchagui', title:'Gaui Tchagui', desc:'Chute formato tesoura', screen:'tchagui' },
+    { section:'Tchagui', title:'Narê Tchagui', desc:'Chute duplo em sequência', screen:'tchagui' },
+    { section:'Tchagui', title:'Bandal Tchagui', desc:'Chute para dentro', screen:'tchagui' },
+    { section:'Insa', title:'Sabumnim Que Kiunhé', desc:'Cumprimento ao Mestre', screen:'insa' },
+    { section:'Insa', title:'Kyosa Nim Que Kiunhé', desc:'Cumprimento ao Instrutor', screen:'insa' },
+    { section:'Insa', title:'Jo Kyo Nim', desc:'Assistente', screen:'insa' },
+    { section:'Insa', title:'Kwan Jan Nim', desc:'Faixa Preta 7 a 9 Dan', screen:'insa' },
+  ];
+
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-' + id).classList.add('active');
+    document.getElementById('backBtn').classList.add('visible');
+    currentScreen = id;
+    window.scrollTo(0, 0);
+    setBnav(null);
+    setSidebarActive(id);
+
+    const titles = {
+      oque: 'O QUE É TAEKWONDO', juramento: 'JURAMENTO',
+      kuryong: 'KURYONG', kibon: 'KIBON DONG JAK',
+      insa: 'INSA', segui: 'SEGUI',
+      sogui: 'SOGUI', maqui: 'MAQUI', tchagui: 'TCHAGUI'
+    };
+    document.getElementById('headerTitle').textContent = titles[id] || 'OVERTAKE TAEKWONDO CLUB';
+    document.getElementById('headerSub').textContent = 'OVERTAKE · Vera Cruz-SP';
+  }
+
+  function goHome() { showHome(); }
+
+  function showHome() {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-home').classList.add('active');
+    document.getElementById('backBtn').classList.remove('visible');
+    document.getElementById('headerTitle').textContent = 'OVERTAKE TAEKWONDO CLUB';
+    document.getElementById('headerSub').textContent = 'OVERTAKE · Vera Cruz-SP';
+    setBnav('home');
+    setSidebarActive('home');
+    window.scrollTo(0, 0);
+  }
+
+  function showSearch() {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-busca').classList.add('active');
+    document.getElementById('backBtn').classList.remove('visible');
+    document.getElementById('headerTitle').textContent = 'BUSCAR';
+    document.getElementById('headerSub').textContent = 'Pesquisar termos e técnicas';
+    setBnav('busca');
+    setSidebarActive('busca');
+    document.getElementById('searchInput').focus();
+    window.scrollTo(0, 0);
+  }
+
+  function setSidebarActive(id) {
+    document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+    const el = document.getElementById('sb-' + id);
+    if (el) el.classList.add('active');
+  }
+
+  function setBnav(active) {
+    document.querySelectorAll('.bnav-btn').forEach(b => b.classList.remove('active'));
+    if (active) { const el = document.getElementById('bnav-' + active); if(el) el.classList.add('active'); }
+  }
+
+  function hl(text, q) {
+    if (!q) return text;
+    const re = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+    return text.replace(re, '<mark>$1</mark>');
+  }
+
+  function doSearch(q) {
+    const container = document.getElementById('searchResults');
+    q = q.trim();
+    if (!q) {
+      container.innerHTML = '<div class="empty-search"><div style="font-size:40px;margin-bottom:12px">🔍</div>Digite para buscar termos,<br>técnicas e comandos.</div>';
+      return;
+    }
+    const ql = q.toLowerCase();
+    const results = searchData.filter(d =>
+      d.title.toLowerCase().includes(ql) ||
+      d.desc.toLowerCase().includes(ql) ||
+      d.section.toLowerCase().includes(ql)
+    );
+    if (!results.length) {
+      container.innerHTML = '<div class="empty-search"><div style="font-size:40px;margin-bottom:12px">😕</div>Nenhum resultado encontrado<br>para "<strong>' + q + '</strong>"</div>';
+      return;
+    }
+    container.innerHTML = results.map(r => `
+      <div class="search-result-item" onclick="showScreen('${r.screen}')">
+        <div class="res-section">${r.section}</div>
+        <div class="res-title">${hl(r.title, q)}</div>
+        <div class="res-desc">${hl(r.desc, q)}</div>
+      </div>
+    `).join('');
+  }
+</script>
+</div><!-- /desktop-main -->
+</div><!-- /desktop-bg -->
+</body>
+</html>
